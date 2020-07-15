@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>sentiment</title>
+</head>
+
+<body>
+    <p>Độ chính xác:</p>
+    <ul>
+        <li>SVM: {{ svm_acc }}</li>
+        <li>Logistic Regression: {{ lr_acc }}</li>
+        <li>SGD Classifier: {{ sgd_acc }}</li>
+        <li>Decision Tree: {{ dt_acc }}</li>
+        <li>MultinomialNB: {{ multiNB_acc }}</li>
+    </ul>
+    <form action="/" method="post">
+        <label for="cars">Chọn 1 thuật toán để dự đoán:</label>
+
+        <select name="algo" id="algo">
+            <option value="svm">SVM</option>
+            <option value="lr">Logistic Regression</option>
+            <option value="sgd">SGD Classifier</option>
+            <option value="dt">Decision Tree</option>
+            <option value="mnb">MultinomialNB</option>
+        </select>
+
+        <p>Gõ ý kiến của bạn tại đây: </p>
+        <input type="text" name="sentiment" />
+        <input type="submit" value="Check" />
+    </form>
+    <p>Kết quả: {{ output }}</p>
+    <p>Selected: {{ selected }}</p>
+</body>
+
+</html>
